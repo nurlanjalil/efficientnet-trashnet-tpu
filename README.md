@@ -16,22 +16,27 @@ This project fine-tunes an **EfficientNet-B0** model on the **TrashNet** dataset
     git clone [https://github.com/nurlanjalil/efficientnet-trashnet-tpu.git](https://github.com/nurlanjalil/efficientnet-trashnet-tpu.git)
     cd efficientnet-trashnet-tpu
     ```
-3.  **Activate your Python Virtual Environment** (e.g., `source tpu_env/bin/activate`).
+3.  **Activate your Python Virtual Environment** (e.g., `source my_ml_env/bin/activate`).
 4.  **Install dependencies:**
     ```bash
     pip install -r requirements.txt
     ```
 5.  **Dataset:** Download the [TrashNet dataset](https://www.kaggle.com/datasets/asdasf/trashnet). Extract `trashnet_dataset` and place it in the root of this repository. **Verify `DATA_DIR` in the notebook (Cell 2) matches this path.**
-6.  **Jupyter Lab:** Start Jupyter Lab on your VM:
-    ```bash
-    jupyter lab --no-browser --port=8888 --ip=0.0.0.0
-    ```
-7.  **Access Jupyter Lab:** Use an SSH tunnel from your local machine:
+6.  **SSH Tunnel for Jupyter Lab:** **(MOVED UP)**
+    From your **local machine's terminal**, use an SSH tunnel to connect to your VM:
     ```bash
     gcloud compute tpus tpu-vm ssh YOUR_TPU_VM_NAME --zone=YOUR_TPU_ZONE -- -L 8888:localhost:8888
     ```
-    Then, open `http://localhost:8888` in your local browser.
-8.  **Run Notebook:** Open `garbage_classification_tpu.ipynb` and execute all cells.
+    Keep this local terminal session open.
+7.  **Start Jupyter Lab on your VM:** **(MOVED DOWN)**
+    From your project directory in the **VM terminal** (with your venv active):
+    ```bash
+    jupyter lab --no-browser --port=8888 --ip=0.0.0.0
+    ```
+    *(This command will print the URL with the token you need.)*
+8.  **Access Jupyter Lab in Browser:** **(MOVED DOWN)**
+    Open `http://localhost:8888` in your local web browser. You will be prompted for a token. Paste the token displayed in your VM terminal from the previous step.
+9.  **Run Notebook:** Open `garbage_classification_tpu.ipynb` and execute all cells.
 
 ## Results:
 -   **Final Validation Accuracy:** `~89.4%`
@@ -46,5 +51,3 @@ The best-performing model checkpoint is provided as `best_model_efficientnet_b0_
 ## Acknowledgements:
 
 Special thanks to the [Google Cloud TPU Research Cloud (TRC)](https://www.tensorflow.org/tfrc) program for providing access to TPU resources.
-
----
