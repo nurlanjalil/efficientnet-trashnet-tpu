@@ -1,4 +1,4 @@
-# ♻️ Trash Classification with EfficientNet-B0 on Google Cloud TP
+# ♻️ Trash Classification with EfficientNet-B0 on Google Cloud TPU
 
 This project fine-tunes an **EfficientNet-B0** model on the **TrashNet** dataset for classifying waste items into 6 categories. Training is performed efficiently on **Google Cloud TPUs** using PyTorch/XLA.
 
@@ -13,7 +13,7 @@ This project fine-tunes an **EfficientNet-B0** model on the **TrashNet** dataset
 1.  **Google Cloud TPU VM:** Ensure you have a TPU VM (e.g., `v3-8`) running on GCP.
 2.  **Clone this repository** to your TPU VM:
     ```bash
-    git clone [https://github.com/nurlanjalil/efficientnet-trashnet-tpu.git](https://github.com/nurlanjalil/efficientnet-trashnet-tpu.git)
+    git clone https://github.com/nurlanjalil/efficientnet-trashnet-tpu.git
     cd efficientnet-trashnet-tpu
     ```
 3.  **Activate your Python Virtual Environment** (e.g., `source my_ml_env/bin/activate`).
@@ -38,11 +38,16 @@ This project fine-tunes an **EfficientNet-B0** model on the **TrashNet** dataset
     Open `http://localhost:8888` in your local web browser. You will be prompted for a token. Paste the token displayed in your VM terminal from the previous step.
 9.  **Run Notebook:** Open `garbage_classification_tpu.ipynb` and execute all cells.
 
-## Results:
--   **Final Validation Accuracy:** `~89.4%`
--   **Final Validation Loss:** `~0.32`
+## 📈 Results
 
-A plot of the training metrics is included: `training_metrics_plot.png`
+| Metric               | Value     |
+|----------------------|-----------|
+| Final Val Accuracy   | **89.4%** |
+| Final Val Loss       | **0.32**  |
+
+- A sample metrics plot is available in `training_metrics_plot_efficientnet_b0.png`
+- Tested on unseen images — consistent results
+
 
 ## Model Checkpoint:
 
