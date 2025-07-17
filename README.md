@@ -1,4 +1,4 @@
-# EfficientNet-B0 for Trash Classification on Google Cloud TPU
+# ♻️ Trash Classification with EfficientNet-B0 on Google Cloud TP
 
 This project fine-tunes an **EfficientNet-B0** model on the **TrashNet** dataset for classifying waste items into 6 categories. Training is performed efficiently on **Google Cloud TPUs** using PyTorch/XLA.
 
