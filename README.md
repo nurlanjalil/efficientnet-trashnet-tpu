@@ -34,8 +34,6 @@ This project fine-tunes an **EfficientNet-B0** model on the **TrashNet** dataset
 8.  **Run Notebook:** Open `garbage_classification_tpu.ipynb` and execute all cells.
 
 ## Results:
-
-(Insert your actual final validation accuracy and loss here, e.g.)
 -   **Final Validation Accuracy:** `~89.4%`
 -   **Final Validation Loss:** `~0.32`
 
