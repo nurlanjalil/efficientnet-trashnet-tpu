@@ -1,0 +1,45 @@
+# OS generated files
+.DS_Store
+__MACOSX/         # macOS metadata, common for zips from Mac
+
+# Python environments and package caches
+my_ml_env/        # Your Python virtual environment
+tpu_env/          # Another potential Python environment
+__pycache__/
+*.pyc
+*.pyo
+.pytest_cache/
+.mypy_cache/
+
+# Jupyter Notebook artifacts
+.ipynb_checkpoints/
+*.ipynb-filter
+
+# Datasets - CRUCIAL TO EXCLUDE LARGE DATA!
+trashnet_dataset/  # Your raw images
+dataset-resized.zip # Temporary data archive
+real-test-images/   # If this contains raw images, exclude it. If it's just a few tiny samples, then remove this line.
+
+# Model checkpoints and logs - Be selective about what you commit!
+# By default, ignore all common model checkpoint and log file extensions/folders.
+# You will manually ADD the *specific* few files you want to include.
+*.pt              # General PyTorch model files (e.g., best_model_efficientnet_b0.pt, etc.)
+*.pth             # Another common PyTorch checkpoint extension
+*.npy             # NumPy arrays (e.g., epoch_times.npy, train_losses.npy) - usually for plotting, plots are better.
+runs/             # Common TensorBoard log directory
+logs/             # Another common log directory
+output_trashnet_pytorch/ # If you used this for output logs and checkpoints.
+
+# System-specific files/directories that should not be tracked
+snap/             # Ubuntu Snap packages directory (usually huge)
+.cache/
+.config/
+.local/
+.npm/
+.ssh/
+.bash_history
+.viminfo
+.vscode-server/   # VS Code remote development cache
+
+# Environment variables (if you use .env files)
+.env
